@@ -31,5 +31,5 @@ fi
 for date in "${dates[@]}"; do
   # Prevent folks from passing in a date with dashes that we want with slashes
   parse_date=$(date -d "${date}" "+%Y/%m/%d")
-  aws s3 sync --quiet "s3://${bucket}/alb/${environment}/AWSLogs/${accountid}/elasticloadbalancing/${region}/${parse_date}/" "$dest"
+  aws s3 sync --quiet "s3://${bucket}/lb/${environment}/AWSLogs/${accountid}/elasticloadbalancing/${region}/${parse_date}/" "$dest"
 done
